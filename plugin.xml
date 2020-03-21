@@ -16,9 +16,18 @@
 		</config-file>
 		<config-file parent="/*" target="AndroidManifest.xml"/>
 		<framework custom="true" src="src/android/build-extras.gradle" type="gradleReference"/>
+		<framework src="com.moengage:moe-android-sdk:9.8.04"/>
+		<framework src="com.android.support:appcompat-v7:26.0.1"/>
 		<source-file src="src/android/com/moengage/cordova/MoECordova.java" target-dir="src/com/moengage/cordova"/>
 		<source-file src="src/android/com/moengage/cordova/CordovaMessageListener.java" target-dir="src/com/moengage/cordova"/>
 		<source-file src="src/android/com/moengage/cordova/CordovaInAppListener.java" target-dir="src/com/moengage/cordova"/>
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+		<service android:name="com.moengage.firebase.MoEFireBaseMessagingService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		</config-file>
 	</platform>
 	<!-- iOS Platform -->
 	<platform name="ios">
@@ -42,6 +51,7 @@
         <source-file src="src/ios/MoEngage/AppDelegate+MoEngage.m" />
 
         <!-- MoEngage iOS SDK files -->
-        <framework   src="MoEngage-iOS-SDK" type="podspec" spec="~> 5.0.0"/>
+        <framework src="MoEngage-iOS-SDK" type="podspec" spec="~> 6.0.0"/>
+		<framework src="MoEngage.framework" />
     </platform>
 </plugin>

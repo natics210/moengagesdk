@@ -46,10 +46,9 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("passToken : fail");
     };
 
-    pushToken = {
+    exec(success, fail, 'MoEngage', 'pass_token', [{
         "gcm_token": token
-    }
-    exec(success, fail, 'MoEngage', 'pass_token', [pushToken]);
+    }]);
 }
 
 /**
@@ -68,10 +67,9 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("pushPayload : fail");
     };
 
-    pushPayload = {
+    exec(success, fail, 'MoEngage', 'pass_payload', [{
         "gcm_payload": pushPayload
-    }
-    exec(success, fail, 'MoEngage', 'pass_payload', [pushPayload]);
+    }]);
 }
 
 /**
@@ -92,10 +90,9 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("setExistingUser : fail");
     };
 
-    existingUser = {
+    exec(success, fail, 'MoEngage', 'existing_user', [{
         "existing_user": isExisting
-    }
-    exec(success, fail, 'MoEngage', 'existing_user', [existingUser]);
+    }]);
 }
 
 /**
@@ -116,11 +113,10 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("trackEvent : fail");
     };
 
-    event = {
+    exec(success, fail, 'MoEngage', 'track_event', [{
         "event_name": eventName,
         "event_attributes": eventAttributes
-    }
-    exec(success, fail, 'MoEngage', 'track_event', [event]);
+    }]);
 }
 
 /**
@@ -152,13 +148,12 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
     } else if (attributeType == "boolean") {
         type = "boolean";
     }
-    userAttribute = {
+
+    exec(success, fail, 'MoEngage', 'set_user_attribute', [{
         "attribute_name": attributeName,
         "attribute_value": attributeValue,
         "attribute_type": type
-    }
-
-    exec(success, fail, 'MoEngage', 'set_user_attribute', [userAttribute]);
+    }]);
 }
 
 
@@ -179,13 +174,11 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("setUserAttributeLocation : fail");
     };
 
-    userAttribute = {
+    exec(success, fail, 'MoEngage', 'set_user_attribute_location', [{
         "attribute_name": attributeName,
         "attribute_lat_value": attributeLatValue,
         "attribute_lon_value": attributeLonValue
-    }
-
-    exec(success, fail, 'MoEngage', 'set_user_attribute_location', [userAttribute]);
+    }]);
 }
 
 /**
@@ -203,12 +196,10 @@ exec(success, fail, 'MoEngage', 'init', [{"init":"init"}]);
         console.log("setUserAttributeTimestamp : fail");
     };
 
-    userAttribute = {
+    exec(success, fail, 'MoEngage', 'set_user_attribute_timestamp', [{
         "attribute_name": attributeName,
         "attribute_value": epochTimeStampVal
-    }
-
-    exec(success, fail, 'MoEngage', 'set_user_attribute_timestamp', [userAttribute]);
+    }]);
 }
 
 /**
