@@ -3,7 +3,7 @@ repositories {
 }
 
 dependencies {
-  compileOnly "com.moengage:moe-android-sdk:9.6.01"
+  compileOnly "com.moengage:moe-android-sdk:9.8.04"
 }
 
 ext.postBuildExtras = {
